@@ -1,4 +1,4 @@
-package com.jays.springrest.controller.transaction;
+package com.jays.springrest.controller.external;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,6 +20,7 @@ public class ApiResponse {
     public void setDataResponse(DataResponse dataResponse) {
         this.dataResponse = dataResponse;
     }
+
 
     public static class DataResponse {
 
@@ -61,5 +62,16 @@ public class ApiResponse {
         public void setTrxId(String trxId) {
             this.trxId = trxId;
         }
+
+
+        @Override
+        public String toString() {
+            return "{" +
+                " errorcode='" + geterrorCode() + "'" +
+                " errormsg='" + geterrorMsg() + "'" +
+                " trxid='" + getTrxId() + "'" +
+                "}";
+        }
+
     }
 }

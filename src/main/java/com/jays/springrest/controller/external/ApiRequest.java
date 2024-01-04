@@ -1,28 +1,28 @@
-package com.jays.springrest.controller.transaction;
+package com.jays.springrest.controller.external;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ApiRequest {
 
     @JsonProperty("sampleservicerq")
-    InnerSampleServiceRequest sampleServiceRq;
+    DataRequest dataRequest;
 
     public ApiRequest() {
     }
 
-    public ApiRequest(InnerSampleServiceRequest sampleServiceRq) {
-        this.sampleServiceRq = sampleServiceRq;
+    public ApiRequest(DataRequest dataRequest) {
+        this.dataRequest = dataRequest;
     }
 
-    public InnerSampleServiceRequest getSampleServiceRq() {
-        return sampleServiceRq;
+    public DataRequest getSampleServiceRq() {
+        return dataRequest;
     }
 
-    public void setSampleServiceRq(InnerSampleServiceRequest sampleServiceRq) {
-        this.sampleServiceRq = sampleServiceRq;
+    public void setSampleServiceRq(DataRequest dataRequest) {
+        this.dataRequest = dataRequest;
     }
 
-    public static class InnerSampleServiceRequest {
+    public static class DataRequest {
 
         @JsonProperty("service_id")
         String serviceId;
@@ -36,7 +36,7 @@ public class ApiRequest {
         @JsonProperty("trx_id")
         String trxId;
 
-        public InnerSampleServiceRequest(String serviceId, String orderType, String type, String trxId) {
+        public DataRequest(String serviceId, String orderType, String type, String trxId) {
             this.serviceId = serviceId;
             this.orderType = orderType;
             this.type = type;
